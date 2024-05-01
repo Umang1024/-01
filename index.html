@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>#01</title>
+</head>
+
+<body>
+    <!-- Internal CSS starts -->
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Segoe UI", Arial, sans-serif;
+            font-weight: 400;
+            margin: 10px 0
+        }
+
+        /* Predefined Classes */
+        .w-100 {
+            width: 100%;
+        }
+
+
+        /* Start #home  */
+
+
+        /* Start Header  */
+        .fixed-nav {
+            position: fixed;
+            width: 100%;
+            z-index: 999;
+        }
+
+        .fixed-nav li {
+            list-style: none;
+            float: left;
+            padding: 0.7rem;
+            width: 10%;
+            text-align: center;
+            font-family: "Lato", sans-serif;
+        }
+
+        .fixed-nav li:hover {
+            transition: 0.5s;
+            background-color: #c8c8c8;
+        }
+
+        .lists a {
+            color: white;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .lists {
+            display: flex;
+            width: 100%;
+        }
+
+        ul.menu-ul {
+            display: block;
+            width: 97%;
+            padding: 0;
+        }
+
+        header {
+            background: #000;
+        }
+
+        .search-icon {
+            width: 3%;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+
+        .search-icon i {
+            font-size: calc(100% + 5px);
+        }
+
+        .search-icon:hover {
+            transition: 0.5s;
+            background: #f00;
+        }
+
+        /* End header */
+
+        /* Start Banner */
+
+        .banner-text-part {
+            width: 100%;
+            position: absolute;
+            color: #FFF;
+            bottom: 5%;
+            text-align: center;
+        }
+
+        .banner-wrapper {
+            position: relative;
+            z-index: 11;
+        }
+
+        .banner-wrapper img {
+            margin-top: 3rem;
+        }
+
+        /* End Banner */
+
+        /* End #home  */
+
+
+        /* Start #Band */
+        .band-wrapper {
+            padding: 5rem 2rem;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+        }
+
+        .band-imgs-part {
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .one-third {
+            width: 33%;
+            float: left;
+        }
+
+        .band-imgs-inner img {
+            width: 60%;
+        }
+
+        .section-title-h2 {
+            font-size: 30px;
+            text-transform: uppercase;
+        }
+
+        .section-subtitle-pi {
+            color: #808080;
+        }
+
+        .band-text-part p {
+            margin: 25px 0;
+        }
+
+        .band-text-part p:last-child {
+            text-align: start;
+        }
+
+        .band-imgs-inner h4 {
+            margin: 1rem 0;
+        }
+
+        /* End #Band */
+
+        /* Start #tour */
+        section#tour {
+            padding: 5rem 2rem;
+            background: #000;
+            color: #fff;
+        }
+
+        .tour-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tour-heading-area {
+            text-align: center;
+            padding: 2rem 0;
+            width: 100%;
+        }
+
+        .tour-month-box {
+            width: 100%;
+            float: left;
+            background: #fff;
+            margin-block-end: 3rem;
+        }
+
+        .tour-box-wrapper {
+            width: 100%;
+        }
+
+        .tour-month-ul {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tour-month-li {
+            float: left;
+            width: 100%;
+            border-bottom: 1px solid #808080;
+            margin: 0;
+            padding: 0.5rem;
+        }
+
+        .tour-month-li span {
+            color: #808080;
+            float: left;
+        }
+
+        .tickets-sold-out {
+            color: #fff;
+            background: #f00;
+            float: right;
+            font-size: 14px;
+            padding: 1px 5px;
+        }
+
+        .tickets-count {
+            background: #000;
+            border-radius: 50%;
+            float: right;
+            padding: 0px 5px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .box {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 0 8px;
+        }
+
+        .box-content {
+            background: #fff;
+            color: #000;
+            padding: 1rem;
+        }
+
+        .box-content * {
+            margin: 1rem 0;
+        }
+
+        .date {
+            color: #808080;
+        }
+
+        .tour-buy-btn,
+        .btn {
+            cursor: pointer;
+            border: none;
+            background: #000;
+            color: #fff;
+            padding: 1rem;
+            margin: 0.5rem 0 5px 0;
+        }
+
+        .tour-buy-btn:hover,
+        .btn:hover {
+            transition: 0.5s;
+            background-color: #c8c8c8;
+        }
+
+        .box img:hover {
+            opacity: 0.6;
+        }
+
+        /* End #tour */
+
+
+        /* #contact Area Starts */
+        .contact-area-wrapper {
+            width: 100%;
+            float: left;
+            text-align: -webkit-center;
+        }
+
+        .contact-area-wrapper .container {
+            padding: 5rem 2rem;
+        }
+
+        .contact-info-area {
+            width: 100%;
+        }
+
+        .contact-content {
+            padding-bottom: 5rem;
+            width: 100%;
+            float: left;
+        }
+
+        .one-half {
+            width: 50%;
+            float: left;
+        }
+
+        .contact-details {
+            text-align: start;
+        }
+
+        .contact-form {
+            text-align: start;
+        }
+
+        textarea#contact_message {
+            width: 100%;
+        }
+
+        input {
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-form input,
+        textarea {
+            margin: 5px 0;
+            padding: 5px 4px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 29px;
+        }
+
+        .contact-btn {
+            float: right;
+            padding: 0.8rem !important;
+        }
+
+        footer {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        footer li {
+            float: left;
+            letter-spacing: 0.5rem;
+            font-size: calc(100% * 1.5);
+            color: #808080;
+        }
+
+
+        footer ul {
+            padding: 0 0 0.5rem 0;
+        }
+
+        footer p {
+            color: #808080;
+        }
+
+        footer a {
+            color: #808080;
+            text-decoration: underline;
+        }
+
+        /* #contact Area Ends */
+    </style>
+    <!-- Internal CSS Ends -->
+    <section id="home" class="h-100vh w-100 main-sec-home">
+
+
+        <section class="fixed-nav">
+            <!-- Routine Contact Links Starts -->
+            <style>
+                /* Contact Links Css Starts */
+                .contact-info {
+                    padding: 0.5rem;
+                    display: flex;
+                    justify-content: space-around;
+                    background-color: #FFF;
+                }
+
+                .contact-info i {
+                    font-size: 22px;
+
+                }
+
+                .contact-info a:hover i.fa.fa-whatsapp {
+                    color: #25D366;
+                    transition: 0.5s;
+                }
+
+                .contact-info a:hover i.fa.fa-linkedin {
+                    color: #0077B5;
+                    transition: 0.5s;
+                }
+
+                .contact-info a:hover i.fa.fa-instagram {
+                    color: #C13584;
+                    transition: 0.5s;
+                }
+
+                .contact-info a:hover i.fa.fa-skype {
+                    color: #00AFF0;
+                    transition: 0.5s;
+                }
+
+                .contact-info a:hover i.fa.fa-tumblr {
+                    color: #34526F;
+                    transition: 0.5s;
+                }
+
+                .contact-info a:hover i.fa.fa-github {
+                    color: #6e5494;
+                    transition: 0.5s;
+                }
+
+                .contact-info a:hover i.fa.fa-envelope-o {
+                    color: #BB001B;
+                    transition: 0.5s;
+                }
+
+                /* Contact Links Css Ends*/
+            </style>
+            <main class="routine-contact">
+                <div class="contact-info">
+                    <a target="_blank" href="https://api.whatsapp.com/send?phone=919737284010&text=Hello%F0%9F%91%8B%2C%20I%27ve%20been%20redirected%20from%20Github%20portfolio.%20" rel="noopener noreferrer"><i class="fa fa-whatsapp"
+                            aria-hidden="true"></i></a>
+                    <a target="_blank" href="https://in.linkedin.com/in/umang-patidar-37694b1a4?trk=people-guest_people_search-card" rel="noopener noreferrer"><i class="fa fa-linkedin"
+                            aria-hidden="true"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/gangsta_s_scull/" rel="noopener noreferrer"><i class="fa fa-instagram"
+                            aria-hidden="true"></i></a>
+                    <a target="_blank" href="https://www.tumblr.com/fiasty1024" rel="noopener noreferrer"><i class="fa fa-tumblr"
+                            aria-hidden="true"></i></a>
+                    <a target="_blank" href="https://github.com/umang1024" rel="noopener noreferrer"><i class="fa fa-github"
+                            aria-hidden="true"></i></a>
+                    <a target="_blank" href="mailto:patelumang1660@gmail.com" rel="noopener noreferrer"><i class="fa fa-envelope-o"
+                            aria-hidden="true"></i></a>
+                </div>
+            </main>
+            <!-- Routine Contact Links Ends -->
+
+            <!-- Header Starts -->
+            <header>
+                <div class="lists">
+                    <ul class="menu-ul">
+                        <a href="#home">
+                            <li class="menu-li">HOME</li>
+                        </a>
+                        <a href="#band">
+                            <li class="menu-li">BAND</li>
+                        </a>
+                        <a href="#tour">
+                            <li class="menu-li">TOUR</li>
+                        </a>
+                        <a href="#contact">
+                            <li class="menu-li">CONTACT</li>
+                        </a>
+                    </ul>
+                    <div class="search-icon"><a href="javascript:void(0)"><i class="fa fa-search"
+                                aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </header>
+            <!-- Header Ends -->
+        </section>
+
+        <!-- Banner Area Starts -->
+        <div class="banner-wrapper w-100">
+            <div class="banner-image-part"><img src="/images/chicago-home.jpg" alt="banner-image" class="w-100"></div>
+            <div class="banner-text-part">
+                <h3>Chicago</h3>
+                <p>Thank you Lorem Ipsum for</p>
+            </div>
+        </div>
+        <!-- Banner Area End -->
+
+        <!-- #Band Area Starts -->
+        <section id="band">
+            <div class="band-wrapper">
+                <div class="container">
+                    <div class="band-text-part">
+                        <h2 class="section-title-h2">The Band</h2>
+                        <p class="section-subtitle-pi"><i>We love music</i></p>
+                        <p>We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                            mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                    <div class="band-imgs-part">
+                        <div class="one-third band-imgs-inner">
+                            <h4>Name</h4><img src="images/02-gallary.jpg" alt="band-member-image">
+                        </div>
+                        <div class="one-third band-imgs-inner">
+                            <h4>Name</h4><img src="images/02-gallary.jpg" alt="band-member-image">
+                        </div>
+                        <div class="one-third band-imgs-inner">
+                            <h4>Name</h4><img src="images/02-gallary.jpg" alt="band-member-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- #Band Area Ends -->
+
+        <!-- #tour Area Starts -->
+        <section id="tour">
+            <div class="tour-wrapper">
+                <div class="container">
+
+                    <div class="tour-heading-area">
+                        <h2 class="section-title-h2">Tour Dates</h2>
+                        <p class="section-subtitle-pi"><i>Remember to book your tickets!</i></p>
+                    </div>
+
+                    <div class="tour-month-box">
+                        <div class="tour-month-inner">
+                            <ul class="tour-month-ul">
+                                <li class="tour-month-li"><span>September</span>
+                                    <p class="tickets-sold-out">Sold Out</p>
+                                </li>
+                                <li class="tour-month-li"><span>September</span>
+                                    <p class="tickets-sold-out">Sold Out</p>
+                                </li>
+                                <li class="tour-month-li"><span>September</span>
+                                    <p class="tickets-count">3</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tour-box-wrapper">
+
+                        <div class="one-third box">
+                            <img src="images/01.jpg" alt="NYC-image">
+                            <div class="box-content">
+                                <h5><b>New York</b></h5>
+                                <p class="date">Fri 27 Nov 2016</p>
+                                <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                                <button class="tour-buy-btn open-popup">Buy tickets</button>
+                            </div>
+                        </div>
+
+                        <div class="one-third box">
+                            <img src="images/02.jpg" alt="NYC-image">
+                            <div class="box-content">
+                                <h5><b>Paris</b></h5>
+                                <p class="date">Sat 28 Nov 2016</p>
+                                <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                                <button class="tour-buy-btn">Buy tickets</button>
+                            </div>
+                        </div>
+
+                        <div class="one-third box">
+                            <img src="images/03.jpg" alt="NYC-image">
+                            <div class="box-content">
+                                <h5><b>San Fransisco</b></h5>
+                                <p class="date">Sun 29 Nov 2016</p>
+                                <p>Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                                <button class="tour-buy-btn">Buy tickets</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- #tour Area Ends -->
+    </section>
+
+
+    <!-- #contact Area Starts -->
+
+    <section id="contact">
+        <div class="contact-area-wrapper">
+            <div class="container">
+
+                <div class="tour-heading-area">
+                    <h2 class="section-title-h2">Contact</h2>
+                    <p class="section-subtitle-pi"><i>Fan? Drop a note!</i></p>
+                </div>
+                <div class="contact-info-area">
+                    <div class="contact-content">
+                        <div class="one-half contact-details">
+                            <h4><i class="fa fa-map-marker" area-hidden="true"></i> Chicago, US</h4>
+                            <h4><i class="fa fa-phone" area-hidden="true"></i> Phone: +00 151515</h4>
+                            <h4><i class="fa fa-envelope-o" area-hidden="true"></i> Email: mail@mail.com</h4>
+                        </div>
+                        <div class="one-half contact-form">
+                            <form action="#">
+                                <input type="text" name="Name" placeholder="Name">
+                                <input type="email" name="Email" placeholder="Email">
+                                <br>
+                                <textarea name="Message" id="contact_message">Message</textarea>
+                                <br>
+                                <input type="button" value="Send" placeholder="Send" class="btn contact-btn">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="contact-image">
+                <img src="images/footer.jpg" alt="location-image" class="w-100">
+            </div>
+        </div>
+    </section>
+
+    <!-- #contact Area Ends -->
+
+    <footer>
+        <ul>
+            <li><i class="fa fa-facebook" area-hidden="true"></i></li>
+            <li><i class="fa fa-instagram" area-hidden="true"></i></li>
+            <li><i class="fa fa-snapchat" area-hidden="true"></i></li>
+            <li><i class="fa fa-pinterest" area-hidden="true"></i></li>
+            <li><i class="fa fa-twitter" area-hidden="true"></i></li>
+            <li><i class="fa fa-linkedin" area-hidden="true"></i></li>
+        </ul>
+        <p>
+            Powered by <a href="#">w3.css</a>
+        </p>
+    </footer>
+</body>
+
+</html>
